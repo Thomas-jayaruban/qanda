@@ -1,0 +1,103 @@
+.card {
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.card-body {
+  padding: 25px;
+  margin-top: -15px;
+}
+.btn-primary {
+  border-radius: 50px;
+  width: 120px;
+}
+.btn-primary:hover {
+  background-color: black;
+}
+
+h3,
+h5 {
+  color: rgb(0, 91, 228);
+}
+.numAmount {
+  width: 120px;
+  color: rgb(0, 91, 228);
+}
+.deposited {
+  height: 50px;
+}
+.containerr {
+  max-width: 140px;
+  width: 100%;
+  margin: auto;
+}
+
+.home {
+  background-position: center;
+  display: flex;
+  flex-wrap: wrap;
+
+  position: relative;
+}
+.home::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 30%;
+
+  z-index: 1;
+}
+
+.home .home-text {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.home .home-text h1 {
+  color: #ffffff;
+  font-size: 50px;
+  color: #ffffff;
+  line-height: 56px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+.home .home-text p {
+  margin: 0;
+  overflow: hidden;
+}
+.home .home-text p span {
+  font-size: 20px;
+  color: #ff2c45;
+  font-weight: 700;
+  display: inline-block;
+  line-height: 26px;
+  display: none;
+}
+
+.home .home-text p span.text-in {
+  display: block;
+  animation: textIn 0.5s ease;
+}
+.home .home-text p span.text-out {
+  animation: textOut 0.5s ease;
+}
+@keyframes textIn {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes textOut {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}

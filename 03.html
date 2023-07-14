@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factorial</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body>
+   
+    <div
+      class="d-flex align-items-center justify-content-center"
+      style="height: 80vh"
+    >
+      <div class="container" style="width:40vw;">
+        <div class="card">
+          <div class="card-header">
+            Factorial
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Enter a number</h5>
+           <input type="number" class="card-text getNumber my-4" >
+
+            <a href="#" class="btn btn-primary clickButton">Click to get factorial of the number</a>
+          </div>
+        </div>
+      </div>
+     
+
+      </div>
+
+    </div>
+    <script>
+      let clickButton = document.querySelector(".clickButton");
+      let inputNum = document.querySelector(".getNumber");
+      let num = 0;
+      clickButton.addEventListener("click",()=>{
+         num = parseInt(inputNum.value);
+        for(let i=num; i>1; i--){
+          num*=i-1;
+        }
+        alert(`The factorial of ${inputNum.value} is ${num}`);
+      })
+      
+     
+      
+    </script>
+
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
+</html>

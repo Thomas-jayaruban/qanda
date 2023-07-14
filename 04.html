@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency converter</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div
+    class="d-flex align-items-center justify-content-center"
+    style="height: 80vh"
+  >
+    <div class="container" style="width:40vw;">
+      <div class="card">
+        <div class="card-header">
+          Currency Converter
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Enter your number:</h5>
+          <p class="card-text"></p>
+         <input type="number" class="card-text getNumber my-4" >
+
+          <a href="#" class="btn btn-primary clickButton">Click to get currency value</a>
+        </div>
+      </div>
+    </div>
+   
+
+    </div>
+
+  </div>
+  <script>
+    let inputNum = document.querySelector(".getNumber");
+    let clickButton = document.querySelector(".clickButton");
+    let num = 0;
+    let currencyValue = 80;
+    document.querySelector(".card-text").innerText = `1 dollar = ${currencyValue}`;
+    clickButton.addEventListener("click",()=>{
+        num = parseInt(inputNum.value);
+        num= Math.round(num/currencyValue);
+        alert(`The value of ₹ ${inputNum.value} in dollars is $ ${num} `)
+    }) 
+
+  </script>
+  <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

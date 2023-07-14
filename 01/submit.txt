@@ -1,0 +1,89 @@
+   <div class="container d-flex justify-content-center">
+      <h3 class="account-name"></h3>
+    </div>
+    <div class="container d-flex justify-content-center">
+      What do you need today?
+      <button class="btn btn-success deposit" onclick="deposit()">
+        Deposit
+      </button>
+      <button class="btn btn-danger withdrawal" onclick="with_Drawal()">
+        Withdrawal
+      </button>
+      <button class="btn btn-info accdetails">Account details</button>
+      <p class="text-info current-Amount"></p>
+    </div>
+    <div
+      class="container d-blockjustify-content-center d-none depositContainer"
+    >
+      <h3 class="deposited"></h3>
+      <input type="number" class="deposit-amount form-control-sm" />
+      <button type="submit" class="btn btn-success" onclick="amount()">
+        Submit
+      </button>
+    </div>
+    <div
+      class="container d-blockjustify-content-center d-none WitdrawalContainer"
+    >
+      <h3 class="withDrawal"></h3>
+      <input type="number" class="deposit-amount form-control-sm" />
+      <button type="submit" class="btn btn-success" onclick="withDrawAmount()">
+        Submit
+      </button>
+    </div>
+    <p class="ThankYou text-primary"></p>
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="..." class="rounded me-2" alt="..." />
+        <strong class="me-auto">Bootstrap</strong>
+        <small>11 mins ago</small>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="toast-body">Hello, world! This is a toast message.</div>
+    </div>
+    <script>
+      let name = document.querySelector(".account-name");
+      name.innerText = "Welcome Tom Justin";
+      let totalAmout = 20000;
+      let currentAmount = document.querySelector(".current-Amount");
+      let deposited = document.querySelector(".deposited");
+      let withDrawal = document.querySelector(".WitdrawalContainer");
+      let withDrawalText = document.querySelector(".withDrawal");
+      let deposited_Amt = document.querySelector(".deposit-amount");
+      let deposited_container = document.querySelector(".depositContainer");
+      let depositedTotal = document.querySelector(".ThankYou");
+      currentAmount.innerHTML = `<strong>Your current amount is ${totalAmout}</strong>`;
+      function deposit() {
+        deposited_container.classList.replace("d-none", "d-block");
+        deposited.innerHTML = "How much amount do you need to deposit? ";
+      }
+
+      let amount = () => {
+        let total_Added = totalAmout + parseInt(deposited_Amt.value);
+        alert(`Your ${deposited_Amt.value} is succesfully deposited`);
+
+        currentAmount.innerHTML = `<strong>Your current amount is ${total_Added}</strong>`;
+        setInterval(() => {
+          deposited_container.classList.replace("d-block", "d-none");
+          depositedTotal.innerHTML = "Thank you for DEPOSITING. Welcome again";
+        }, 3000);
+      };
+      function with_Drawal() {
+        withDrawal.classList.replace("d-none", "d-block");
+        withDrawalText.innerHTML = "How much amount do you need to Withdraw? ";
+      }
+      let withDrawAmount = () => {
+        total_Added = totalAmout - parseInt(deposited_Amt.value);
+        alert(`Your ${deposited_Amt.value} is succesfully WithDrawed`);
+
+        currentAmount.innerHTML = `<strong>Your current amount is ${total_Added}</strong>`;
+        setInterval(() => {
+          deposited_container.classList.replace("d-block", "d-none");
+          depositedTotal.innerHTML = "Thank you for withdrawing. Welcome again";
+        }, 3000);
+      };
+    </script>

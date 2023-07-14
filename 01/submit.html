@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <link href="../css/bootstrap.min.css" / rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-md bg-body-secondary d-flex justify-content-center shadow bg-body-tertiary rounded"
+    >
+      <div class="contaner d-flex justify-content-center">
+        <a href="" class="navbar-brand">
+          <img
+            src="images/logo.png"
+            width="30"
+            height="30"
+            alt="logo"
+            class="d-inline-block align-text-top"
+          />
+          Thomas Bank
+        </a>
+      </div>
+    </nav>
+    <div
+      class="d-flex align-items-center justify-content-center"
+      style="height: 80vh"
+    >
+      <div class="container">
+        <div class="container text-center" style="height: 80px">
+          <div class="row justify-content-lg-center">
+            <div class="col">
+              <h3>Welcome Thomas!!</h3>
+              <section class="home">
+                <div class="containerr">
+                  <div class="row">
+                    <div class="home-text">
+                      <p class="animate-text">
+                        <span>What do you need us to do?</span>
+                        <span class="amountDeposit"
+                          >Your current Balance is ₹12000</span
+                        >
+                        <span>Deposit</span>
+                        <span>Withdrawal</span>
+                        <span>Your Account info</span>
+                        <span>Click Your choice</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <div class="container text-center" style="margin-top: 50px">
+          <div class="row row-cols-2">
+            <div class="col float-start" style="height: 50px">
+              <button
+                type="button"
+                class="btn btn-success depositAmt"
+                id="deposit"
+                style="width: 180px"
+              >
+                Deposit
+              </button>
+            </div>
+            <div class="col" style="height: 50px">
+              <button
+                style="width: 180px"
+                type="button"
+                class="btn btn-danger withdrawalAmt"
+                id="Withdrawal"
+              >
+                Withdrawal
+              </button>
+            </div>
+            <div class="col" style="height: 50px">
+              <button
+                style="width: 180px"
+                type="button"
+                class="btn btn-info"
+                id="AccountDetails"
+              >
+                Account Details
+              </button>
+            </div>
+            <div class="col" style="height: 50px">
+              <button
+                style="width: 180px"
+                type="button"
+                class="btn btn-warning"
+                id="ChangePersonal"
+              >
+                Change Personal
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="bank.js"></script>
+    <script>
+      const txts = document.querySelector(".animate-text").children,
+        txtsLen = txts.length;
+      let index = 0;
+      const textInTimer = 3000,
+        textOutTimer = 2800;
+
+      function animateText() {
+        for (let i = 0; i < txtsLen; i++) {
+          txts[i].classList.remove("text-in", "text-out");
+        }
+        txts[index].classList.add("text-in");
+
+        setTimeout(function () {
+          txts[index].classList.add("text-out");
+        }, textOutTimer);
+
+        setTimeout(function () {
+          if (index == txtsLen - 1) {
+            index = 0;
+          } else {
+            index++;
+          }
+          animateText();
+        }, textInTimer);
+      }
+
+      window.onload = animateText;
+    </script>
+  </body>
+</html>

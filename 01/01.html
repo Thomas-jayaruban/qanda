@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-md bg-body-secondary d-flex justify-content-center shadow bg-body-tertiary rounded"
+    >
+      <div class="contaner d-flex justify-content-center">
+        <a href="" class="navbar-brand">
+          <img
+            src="images/logo.png"
+            width="30"
+            height="30"
+            alt="logo"
+            class="d-inline-block align-text-top"
+          />
+          Thomas Bank
+        </a>
+      </div>
+    </nav>
+
+    <div
+      class="d-flex align-items-center justify-content-center"
+      style="height: 80vh"
+    >
+      <div class="card shadow bg-body-tertiary rounded">
+        <div class="card-header mx-auto">Login</div>
+        <div class="card-body mx-auto">
+          <h5 class="card-title">Account Number :</h5>
+          <p class="card-text">
+            <input class="form-control-sm" type="number" id="acc-number" />
+          </p>
+          <h5 class="card-title">Password :</h5>
+          <p class="card-text">
+            <input class="form-control-sm" type="password" id="pass-word" />
+          </p>
+
+          <button
+            type="button"
+            class="btn btn-primary container-fluid liveToastBtn"
+            id=" liveToastBtn"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+      <div id="toast"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+  </body>
+</html>
